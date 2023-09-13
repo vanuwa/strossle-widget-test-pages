@@ -28,12 +28,16 @@ body main h1.body-main-title span.accent {
   font-weight: bolder;
 }
 
-body main test-case {
+body main .test-case {
   text-align: center;
 }
 
-body main test-case h2 {
+body main .test-case h2 {
   font-size: 24px;
+}
+body main .test-case .newsletter,
+body main .test-case .widget {
+  display: inline-block;
 }
 
 body main ul {
