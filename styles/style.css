@@ -12,6 +12,10 @@ body {
   background-color: #efefef;
 }
 
+body.strossle {
+  background-color: #fff;
+}
+
 body main {
   min-height: 100%;
 }
