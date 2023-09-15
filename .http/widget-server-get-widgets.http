@@ -1,0 +1,11 @@
+### From Picasso request
+GET {{ws_base_url}}/v1/widgets/{{widget_id}}
+  ?url=
+  &device=desktop
+  &gdpr=1
+  &gdpr_consent=1
+  &page-session-id=1290311-13194379
+X-Forwarded-For: 34.251.67.224
+#X-Forwarded-For: 77.242.112.10
+
+###
