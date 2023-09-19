@@ -1,0 +1,61 @@
+<{%
+  var uuid = function() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+  };
+
+  request.variables.set("uuid", uuid())
+ %}
+
+
+### Belfort
+POST {{belfort_base_url}}/widget/promotions
+Content-Type: application/json
+
+{
+  "id": "4556bba8ed3eda775b63b6b36eda27d0",
+  "test": 0,
+  "at": 1,
+  "cur": [],
+  "item": [
+    {
+      "id": "ebc7cde5-0412-4cca-8b8a-0fc59c83c1cb",
+      "ext": {
+        "itemCount": 2
+      }
+    }
+  ],
+  "context": {
+    "site": {
+      "page": "http://localhost:63342/strossle-widget-test-pages/ebc7cde5-0412-4cca-8b8a-0fc59c83c1cb.html?_ijt=nokkge1j345dmv6kt3imchm2mn&_ij_reload=RELOAD_ON_SAVE",
+      "ext": {
+        "targeting": [
+          {
+            "key": "ad_type",
+            "values": [
+              "house_ad"
+            ]
+          }
+        ]
+      }
+    },
+    "user": {
+      "consent": ""
+    },
+    "device": {
+      "ua": "Apache-HttpClient/4.5.14 (Java/17.0.8)",
+      "ip": "::ffff:77.242.112.10"
+    },
+    "regs": {
+      "gdpr": 0
+    }
+  }
+}
+###
+
+#https://ad.360yield-basic.com/1983/hbs
+#Accept-Language -> da

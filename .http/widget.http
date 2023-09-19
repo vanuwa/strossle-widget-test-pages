@@ -1,0 +1,70 @@
+### Widget integraton request
+GET {{ws_base_url}}/v1/widgets/{{widget_id}}
+  ?url=http%3A%2F%2Flocalhost%3A63342%2Fstrossle-widget-test-pages%2Febc7cde5-0412-4cca-8b8a-0fc59c83c1cb.html%3F_ijt%3Dnokkge1j345dmv6kt3imchm2mn%26_ij_reload%3DRELOAD_ON_SAVE
+  &device=desktop
+  &gdpr=
+  &gdpr_consent=
+#  &page-session-id=d999db5b-0ed8-4f8f-a796-d23ac12fe1bd
+###
+
+### Picasso request
+GET {{ws_base_url}}/v1/widgets/{{widget_id}}
+  ?url=
+  &device=desktop
+  &gdpr=1
+  &gdpr_consent=1
+  &page-session-id=1290311-13194379
+X-Forwarded-For: 77.242.112.10
+###
+
+### Belfort request
+POST {{belfort_base_url}}/widget/promotions
+Content-Type: application/json
+
+{
+  "id": "1290311-13194379",
+  "test": 0,
+  "at": 1,
+  "cur": [],
+  "item": [
+    {
+      "id": "ebc7cde5-0412-4cca-8b8a-0fc59c83c1cb",
+      "ext": {
+        "itemCount": 2
+      }
+    }
+  ],
+  "context": {
+    "site": {
+      "page": "",
+      "ext": {
+        "targeting": [
+          {
+            "key": "ad_type",
+            "values": [
+              "house_ad"
+            ]
+          }
+        ]
+      }
+    },
+    "user": {
+      "consent": "1"
+    },
+    "device": {
+      "ua": "Apache-HttpClient/4.5.14 (Java/17.0.8)",
+      "ip": "::ffff:127.0.0.1"
+    },
+    "regs": {
+      "gdpr": 1
+    }
+  }
+}
+###
+
+#{
+#  "bidid": "1290311-13194379",
+#  "seatbid": [
+#    {}
+#  ]
+#}
