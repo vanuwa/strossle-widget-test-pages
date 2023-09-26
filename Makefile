@@ -6,10 +6,11 @@ image:
 	@echo "DONE"
 
 run:
-	docker run -d -p 80:80 $(APP_NAME):$(APP_VERSION)
+	docker run --name $(APP_NAME) -d -p 80:80 $(APP_NAME):$(APP_VERSION)
 	@echo "DONE"
 
 .PHONY: clean
 clean:
+	docker rm $(APP_NAME)
 	docker rmi $(APP_NAME):$(APP_VERSION)
 	@echo "DONE"
