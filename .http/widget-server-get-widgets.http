@@ -8,3 +8,4 @@ GET {{ws_base_url}}/v1/widgets/{{widget_id}}
 X-Forwarded-For: 77.242.112.10
 
 ###
+# http://api.widget.strossle.bro:4001/v1/widgets/ebc7cde5-0412-4cca-8b8a-0fc59c83c1cb?device=desktop&gdpr=1&gdpr_consent=1&page-session-id=319dd587e57ee46f17c61f8b59abb3be94d6f104
