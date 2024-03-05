@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested Iframes</title>
+  <link rel="stylesheet" href="styles/iframe.css">
+</head>
+<body>
+
+<script>
+  // Function to get query parameter by name
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Get the value of 'N' from the query parameters
+  const N = parseInt(getQueryParam('n')) || 1;
+  const topOrigin = 'http://localhost:63342/'
+  // const topOrigin =  window.location.origin
+
+  // Function to create and nest iframes
+  function createNestedIframes(parent, depth) {
+    parent.style.margin = 0
+    if (depth === 0) {
+      // For the most nested iframe, set the source to 'ts.html'
+      parent.innerHTML = `<link rel="stylesheet" href="styles/iframe.css"><iframe src="http://127.0.0.1:8080/ts.html?w=fd191746-5b3c-4d17-a1ca-c3d07c947c2a&v=2"></iframe>`;
+      return;
+    }
+
+    const iframe = document.createElement('iframe');
+    iframe.src = 'about:blank'; // You can set the source URL as per your requirement
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 0;
+
+    parent.appendChild(iframe);
+
+    // Recursively create nested iframes
+    createNestedIframes(iframe.contentDocument.body, depth - 1);
+  }
+
+  // Create iframes
+  createNestedIframes(document.body, N);
+</script>
+
+</body>
+</html>
